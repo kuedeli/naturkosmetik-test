@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf7ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14180f" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var t=localStorage.getItem('nsb_theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <title>Nature Skin Beauty — Naturkosmetik & ganzheitliche Hautgesundheit</title>
 <meta name="description" content="Nature Skin Beauty – Naturkosmetikstudio von Belinda Gremaud. Naturnahe Behandlungen, ganzheitliche Hautgesundheit, Neurodermitis-Expertise und hausgemachte Naturcremes.">
 <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
@@ -48,6 +51,11 @@
       <a href="#kontakt">Kontakt</a>
     </nav>
 
+    <button class="nav__theme" id="themeBtn" aria-label="Farbschema wechseln" title="Hell / Dunkel">
+      <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+    </button>
+
     <button class="nav__cart" id="cartBtn" aria-label="Warenkorb öffnen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H3"/></svg>
       <span class="nav__cart-badge" id="cartCount" hidden>0</span>
@@ -78,6 +86,13 @@
     <a href="#preise" data-close>Preise</a>
     <a href="#shop" data-close>Shop</a>
     <a href="#kontakt" data-close>Kontakt</a>
+    <button class="drawer__theme" id="themeBtnMobile" type="button">
+      <span class="drawer__theme-ic">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+      </span>
+      <span data-theme-label>Dunkelmodus</span>
+    </button>
     <a href="#buchung" class="btn btn--primary" data-close>Termin buchen</a>
   </div>
 </div>

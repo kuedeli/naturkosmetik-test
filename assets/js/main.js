@@ -10,6 +10,20 @@
   /* ---------- Year ---------- */
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
+  /* ---------- Theme (dark mode) ---------- */
+  const root = document.documentElement;
+  const applyTheme = t => {
+    root.setAttribute('data-theme', t);
+    try { localStorage.setItem('nsb_theme', t); } catch (e) {}
+    $$('[data-theme-label]').forEach(el => el.textContent = t === 'dark' ? 'Hellmodus' : 'Dunkelmodus');
+    const meta = $('meta[name="theme-color"]:not([media])') || $('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#14180f' : '#faf7ef');
+  };
+  const toggleTheme = () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  // sync label with the theme already set by the inline head script
+  applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  ['#themeBtn', '#themeBtnMobile'].forEach(sel => { const b = $(sel); if (b) b.addEventListener('click', toggleTheme); });
+
   /* ---------- Nav scroll state ---------- */
   const nav = $('#nav');
   const onScroll = () => {

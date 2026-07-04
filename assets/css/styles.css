@@ -110,6 +110,8 @@ h1,h2,h3,h4{font-family:var(--f-serif);color:var(--ink);font-weight:600;line-hei
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
 .section{padding-block:clamp(72px,9vw,120px)}
 .section--tight{padding-block:clamp(56px,7vw,90px)}
+/* keep anchored section titles clear of the fixed header */
+.hero,.section,.section--tight,.claim{scroll-margin-top:84px}
 .bg-cream-2{background:var(--cream-2)}
 .bg-sand{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%)}
 
@@ -700,4 +702,47 @@ h1,h2,h3,h4{font-family:var(--f-serif);color:var(--ink);font-weight:600;line-hei
   .about__quote{right:0;left:0;max-width:none}
   .g-tall{grid-row:span 1}
   .testi__inner{gap:0}
+  /* keep the shop 2-up on small tablets rather than a single tall column */
+  .shop__grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- Phones ---------- */
+@media (max-width:560px){
+  .section{padding-block:clamp(56px,14vw,74px)}
+  .section-head{margin-bottom:34px}
+  /* eyebrow: tighter tracking so long labels don't overflow */
+  .eyebrow{letter-spacing:.14em;font-size:.72rem}
+
+  /* nav: hide the strapline and slim the icon buttons so nothing crowds */
+  .brand__tag{display:none}
+  .brand__name{font-size:1.08rem}
+  .nav__theme,.nav__cart,.nav__toggle{width:40px;height:40px}
+
+  /* hero: full-width stacked CTAs + tidier stats */
+  .hero__cta{flex-direction:column;align-items:stretch;gap:12px;margin-bottom:32px}
+  .hero__cta .btn{width:100%}
+  .hero__stats{gap:0;justify-content:space-between;width:100%}
+  .hero__stat{flex:1;min-width:0}
+  .hero__stat .n{font-size:1.6rem}
+  .hero__stat .l{font-size:.78rem}
+  .hero__badge{left:10px;right:10px;bottom:12px;max-width:none;padding:13px 16px}
+
+  /* about quote reads as its own card below the photo (no overlap) */
+  .about__media{margin-bottom:14px}
+  .about__quote{position:static;max-width:none;margin-top:14px;padding:20px 22px}
+
+  /* one product per row on the smallest screens */
+  .shop__grid{grid-template-columns:1fr}
+
+  /* footer bottom bar stacks cleanly */
+  .footer__bar{flex-direction:column;align-items:flex-start;gap:10px}
+
+  /* lightbox controls pulled to the corners so they clear the image */
+  .lb-btn{width:44px;height:44px}
+  .lb-close{top:14px;right:14px}
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+
+  /* keep floating widgets from crowding thumb zones */
+  .totop{right:16px;bottom:16px;width:44px;height:44px}
 }

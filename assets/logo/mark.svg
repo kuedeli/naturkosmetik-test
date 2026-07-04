@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Nature Skin Beauty Emblem">
+  <defs>
+    <!-- almond leaf, base at (0,0), tip at (0,-26) -->
+    <g id="nsb-leaf">
+      <path d="M0,0 C-6,-8 -4,-19 0,-26 C4,-19 6,-8 0,0 Z" fill="currentColor"/>
+      <path d="M0,-3 L0,-23" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35" stroke-linecap="round" fill="none"/>
+    </g>
+  </defs>
+  <!-- open ring -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.55"/>
+  <!-- stem -->
+  <path d="M60,100 C58,86 60,72 60,58 C60,46 60,36 60,26"
+        fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- top bud -->
+  <circle cx="60" cy="24" r="4.4" fill="currentColor"/>
+  <!-- leaf pairs (scaled smaller toward top) -->
+  <g transform="translate(60,86)">
+    <use href="#nsb-leaf" transform="rotate(48) scale(0.95)"/>
+    <use href="#nsb-leaf" transform="rotate(-48) scale(0.95)"/>
+  </g>
+  <g transform="translate(60,68)">
+    <use href="#nsb-leaf" transform="rotate(46) scale(0.82)"/>
+    <use href="#nsb-leaf" transform="rotate(-46) scale(0.82)"/>
+  </g>
+  <g transform="translate(60,50)">
+    <use href="#nsb-leaf" transform="rotate(44) scale(0.68)"/>
+    <use href="#nsb-leaf" transform="rotate(-44) scale(0.68)"/>
+  </g>
+</svg>
